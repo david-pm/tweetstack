@@ -1,7 +1,18 @@
-<%= link_to("Twitter >>", "https://twitter.com") %>
-
-<div>
-  <h2>Enter a Twitter handle to get recent tweets:</h2>
+<div class="index">
+  <header class="heading">
+    <h1 class="title">TweetStack</h1>
+    <pre>
+        .-"-.
+       / 4 4 \
+       \_ v _/
+       //   \\      
+      ((     ))
+=======""===""=======
+         |||
+         '|'
+    </pre>
+    <p>Enter a Twitter handle to get recent tweets:</p>
+  </header>
 
   <%= form_tag tweets_path, method: 'post', class: "pull-left" do %>
     <div class="field">
@@ -11,18 +22,19 @@
       <%= submit_tag "Get Tweets", class: "btn btn-submit" %>
     </div>
   <% end %>
-</div>
 
-<section id="tweets">
-  <% unless @tweets.blank? %>
-    <h2>Twitter Handle: <%= @tweets.first.user.screen_name %></h2> 
-    <ul>
-      <% @tweets.each do |tweet| %>
-        <li>
-          <%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %><br>
-          <%= tweet.created_at.try(:strftime, '%m/%d/%Y %I:%M%P') %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-</section>
+  <section id="tweets">
+    <% unless @tweets.blank? %>
+      <h2><%= @tweets.first.user.screen_name %>'s Recent Tweets:</h2> 
+      <ol>
+        <% @tweets.each do |tweet| %>
+          <li>
+            <%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %><br>
+            <%= tweet.created_at.try(:strftime, '%m/%d/%Y %I:%M%P') %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+    <%= link_to("or just go to Twitter instead >>", "https://twitter.com") %>
+  </section>
+</div>
