@@ -13,8 +13,11 @@
     <ol>
       <% @tweets.each do |tweet| %>
         <li>
-          <%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %><br>
-          <%= tweet.created_at.try(:strftime, '%m/%d/%Y %I:%M%P') %>
+          <%= link_to tweet.full_text, "https://www.twitter.com/#{tweet.user.screen_name}" %><br>
+          <small><%= tweet.created_at.try(:strftime, '%m/%d/%Y %I:%M%P') %></small>
+          <% tweet.user_mentions.each do |mention| %>
+            <br><%= link_to "#{mention.name} >>", "https://www.twitter.com/#{mention.screen_name}", class: "mentions" %>
+          <% end %>
         </li>
       <% end %>
     </ol>

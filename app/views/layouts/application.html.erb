@@ -11,12 +11,19 @@
 
   <body class="index">
     <header class="heading">
+      <% if logged_in? %>
+        <%= "Chrip, #{@current_user.name}!" %><br>
+        <%= link_to(logout_path, method: "delete") do %>
+          &raquo; log out
+        <% end %>
+      <% end %>
+
       <h1 class="title">TweetStack</h1>
       <pre>
           .-"-.
          / 4 4 \
          \_ v _/
-         //   \\      
+         //   \\
         ((     ))
   =======""===""=======
            |||

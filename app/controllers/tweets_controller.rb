@@ -1,4 +1,6 @@
 class TweetsController < ApplicationController
+  before_action :logged_in_user
+
   def index
     @tweets = $client.user_timeline(sanitize_handle, count: 25) if params[:handle]
   rescue Twitter::Error::NotFound => e

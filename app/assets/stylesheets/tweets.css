@@ -10,6 +10,12 @@ body{ background:#1D1D1D; color:#ffe4e1; }
 .index a:visited { color:#FF3E3E; }
 .index a:hover { color:#FF723E; }
 .index a:active { color:#FF3E3E; }
+
+.index a.mentions { color: #000; }
+.index a.mentions:visited { color: #000; }
+.index a.mentions:hover { color: #111; }
+.index a.mentions:active { color: #000; }
+
 input { padding: 0; margin: 0; min-width: 320px; }
 input {
   font: 13px/1.6 "Droid Sans Mono", monospace;
@@ -30,3 +36,8 @@ input.btn {
 .btn-submit { background: #FF3E3E; color: #333; }
 .btn-submit:hover { background: #FF3E2F; }
 .alert.alert-danger { color: red; }
+ol li {
+  max-width: 400px;
+  background: #333;
+  padding: 8px;
+}
