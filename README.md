@@ -1,24 +1,14 @@
-# README
+# TWEETSTACK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails5 app that allows you to search for the last 25 tweets by a given @handle.
 
-Things you may want to cover:
+You will need a user email and password to use the demo app hosted: 
 
-* Ruby version
+* https://quiet-harbor-86203.herokuapp.com/
 
-* System dependencies
+Message or email me if you care to use it.
 
-* Configuration
+There is no real need for the database but, in this case, we have an authentication layer that leverages bcrypt and ActiveRecord's `has_secure_password`.
 
-* Database creation
+Making use of the [Twitter gem](https://github.com/sferik/twitter), we simply take a handle and attempt to find the last 25 tweets, parsing out the text, time and mentions.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
