@@ -1,0 +1,28 @@
+<%= link_to("Twitter >>", "https://twitter.com") %>
+
+<div>
+  <h2>Enter a Twitter handle to get recent tweets:</h2>
+
+  <%= form_tag tweets_path, method: 'post', class: "pull-left" do %>
+    <div class="field">
+      <%= text_field_tag :handle, params[:handle], class: "form-control" %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Get Tweets", class: "btn btn-submit" %>
+    </div>
+  <% end %>
+</div>
+
+<section id="tweets">
+  <% unless @tweets.blank? %>
+    <h2>Twitter Handle: <%= @tweets.first.user.screen_name %></h2> 
+    <ul>
+      <% @tweets.each do |tweet| %>
+        <li>
+          <%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %><br>
+          <%= tweet.created_at.try(:strftime, '%m/%d/%Y %I:%M%P') %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
