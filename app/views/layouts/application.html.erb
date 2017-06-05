@@ -9,7 +9,26 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body class="index">
+    <header class="heading">
+      <h1 class="title">TweetStack</h1>
+      <pre>
+          .-"-.
+         / 4 4 \
+         \_ v _/
+         //   \\      
+        ((     ))
+  =======""===""=======
+           |||
+           '|'
+      </pre>
+      <p>Enter a Twitter handle to get recent tweets:</p>
+    </header>
+
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
