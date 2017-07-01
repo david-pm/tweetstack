@@ -12,7 +12,7 @@
   <body class="index">
     <header class="heading">
       <% if logged_in? %>
-        <%= "Chrip, #{@current_user.name}!" %><br>
+        <%= "Chirp, #{@current_user.name}!" %><br>
         <%= link_to(logout_path, method: "delete") do %>
           &raquo; log out
         <% end %>

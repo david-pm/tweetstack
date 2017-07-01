@@ -1,6 +1,6 @@
 # TWEETSTACK
 
-![tweetstack](https://s3.amazonaws.com/uploads.sellbrite.com/7999/1496704410_tweetstack.png)
+![tweetstack](https://s3.amazonaws.com/uploads.sellbrite.com/7999/tweetstack.png)
 
 A simple Rails5 app that allows you to search for the last 25 tweets by a given @handle.
 
