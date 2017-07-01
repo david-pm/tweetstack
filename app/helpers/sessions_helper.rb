@@ -1,4 +1,5 @@
 module SessionsHelper
+  # http://guides.rubyonrails.org/action_controller_overview.html#session
   def log_in(user)
     session[:user_id] = user.id
   end
