@@ -16,7 +16,8 @@
           <%= link_to tweet.full_text, "https://www.twitter.com/#{tweet.user.screen_name}" %><br>
           <small><%= tweet.created_at.try(:strftime, '%m/%d/%Y %I:%M%P') %></small>
           <% tweet.user_mentions.each do |mention| %>
-            <br><%= link_to "#{mention.name} >>", "https://www.twitter.com/#{mention.screen_name}", class: "mentions" %>
+            <br><%= link_to "See tweets for #{mention.name} >>", "/#{mention.name}", class: "mentions" %>
+            <br><%= link_to "Or visit them on Twitter >>", "https://www.twitter.com/#{mention.screen_name}", class: "mentions" %>
           <% end %>
         </li>
       <% end %>

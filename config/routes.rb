@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  match "tweets" => "tweets#index", via: [:get, :post]
+  match 'tweets' => 'tweets#index', via: [:get, :post]
+  get '/:handle', to: 'tweets#show'
 end
